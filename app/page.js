@@ -47,9 +47,19 @@ export default function Home() {
       <div className="bg-white h-1 opacity-10 text-white">
       </div>
 
-      <div className="text-white container mx-auto pb-32 pt-14 flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-center mb-14">Learn more about us</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ea5fdEU947w?si=FRwLW-5JeqDpw40W" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      <div className="text-white container mx-auto pb-32 pt-14 flex flex-col items-center gap-5 flex-wrap">
+        <h2 className="text-3xl font-bold text-center mb-14">Feature Overview of GetMeATea</h2>
+        <div className="image flex flex-row w-30 flex-wrap justify-center items-center">
+          <div className="1">
+        <img src="/userauth.png" alt="" width={244} />
+          </div>
+          <div className="2">
+        <img src="/userpage.png" alt="" width={244} /></div>
+        <div className="2">
+        <img src="/pagegen.png" alt="" width={244} /></div><div className="2">
+        <img src="/paymentp.png" alt="" width={244} /></div><div className="2">
+        <img src="/umbrella.png" alt="" width={244} /></div>
+        </div>
       </div>
     </>
   );
