@@ -19,6 +19,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/istanbul-reports": "^3.0.4",
+    "@types/stack-utils": "^2.0.3",
+    "@types/yargs": "^17.0.33",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
