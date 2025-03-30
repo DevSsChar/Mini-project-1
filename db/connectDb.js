@@ -9,9 +9,9 @@ const connectDB = async () => {
     }
 
     try {
-        const conn = await mongoose.connect("mongodb://localhost:27017/teadb", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
+        const conn = await mongoose.connect("mongodb+srv://23it116:Mahachatrapataka@cluster0.s0j9wyr.mongodb.net/teadb", {
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true,
             connectTimeoutMS: 60000,
         });
 
