@@ -101,33 +101,33 @@ const PaymentPage = ({ username }) => {
             <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
 
             <div className='cover w-full relative flex justify-center items-center' >
-                <img src={currentUser.coverpic} className='cover w-full h-auto' alt="" />
-                <div className='absolute -bottom-20 border-black border-2 roundex-lg rounded-full size-32 object-cover overflow-hidden'>
-                    <img className='rounded-full object-cover size-32' width={128} height={128} src={currentUser.profilepic} alt="" />
+                <img src={currentUser.coverpic} className='cover w-full h-auto max-h-[300px] object-cover' alt="" />
+                <div className='absolute -bottom-20 border-black border-2 roundex-lg rounded-full size-24 sm:size-32 object-cover overflow-hidden'>
+                    <img className='rounded-full object-cover size-24 sm:size-32' width={128} height={128} src={currentUser.profilepic} alt="" />
                 </div>
             </div>
-            <div className="info flex justify-center items-center my-24 flex-col gap-2">
+            <div className="info flex justify-center items-center my-24 flex-col gap-2 px-4">
                 <div className='font-bold text-lg'>
                     @{username}
                 </div>
-                <div className='text-slate-400'>
+                <div className='text-slate-400 text-center'>
                     Lets help {username} to get a tea
                 </div>
-                <div className='text-slate-400'>
+                <div className='text-slate-400 text-sm sm:text-base'>
                     {payments.length} Payments . {currentUser.name} has raised ₹{payments.reduce((a,b)=>a+b.amount,0)}
                 </div>
 
-                <div className="payment flex gap-3 w-[80%] mt-11">
-                    <div className="supporters w-1/2 bg-slate-900 rounded-lg text-white p-10">
+                <div className="payment flex flex-col md:flex-row gap-3 w-full sm:w-[90%] md:w-[80%] mt-8 sm:mt-11">
+                    <div className="supporters w-full md:w-1/2 bg-slate-900 rounded-lg text-white p-4 sm:p-10 mb-4 md:mb-0">
                         {/* show list of all supporters as a leaderboard */}
-                        <h2 className='text-2xl font-bold '>Supporters</h2>
-                        <ul className='mx-5 text-lg'>
+                        <h2 className='text-xl sm:text-2xl font-bold'>Supporters</h2>
+                        <ul className='mx-2 sm:mx-5 text-base sm:text-lg'>
                             {payments.length == 0 && <li>No Payments Yet</li>}
                             {payments.map((p, i) => {
-                                return <li key={i} className='my-4 flex gap-2  items-center'>
+                                return <li key={i} className='my-4 flex gap-2 items-center flex-wrap'>
                                     <img width={33} src="teagif.gif" alt="user avatar"
                                         className='rounded-full' />
-                                    <span>
+                                    <span className="text-sm sm:text-base">
                                         {p.name} donated
                                         <span className='font-bold'> ₹{p.amount}</span> with a message "{p.message}"
                                     </span>
@@ -136,8 +136,8 @@ const PaymentPage = ({ username }) => {
                         </ul>
                     </div>
 
-                    <div className="makepayment w-1/2 bg-slate-900 rounded-lg p-10">
-                        <h2 className='text-2xl font-bold my-5'>Support {username}</h2>
+                    <div className="makepayment w-full md:w-1/2 bg-slate-900 rounded-lg p-4 sm:p-10">
+                        <h2 className='text-xl sm:text-2xl font-bold my-3 sm:my-5'>Support {username}</h2>
                         <div className="flex gap-2 flex-col">
                             {/* input for name and message and amount */}
                             <input
@@ -158,10 +158,11 @@ const PaymentPage = ({ username }) => {
                         </div>
                         {/* or chhose from this amount
                        */}
-                        <div className="flex gap-2 mt-5">
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(1000)}>Pay ₹10</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(2000)}>Pay ₹20</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(3000)}>Pay ₹30</button></div>
+                        <div className="grid grid-cols-3 gap-2 mt-5">
+                            <button className='bg-slate-800 p-3 rounded-lg text-sm sm:text-base' onClick={() => pay(1000)}>Pay ₹10</button>
+                            <button className='bg-slate-800 p-3 rounded-lg text-sm sm:text-base' onClick={() => pay(2000)}>Pay ₹20</button>
+                            <button className='bg-slate-800 p-3 rounded-lg text-sm sm:text-base' onClick={() => pay(3000)}>Pay ₹30</button>
+                        </div>
                     </div>
                 </div>
             </div>
